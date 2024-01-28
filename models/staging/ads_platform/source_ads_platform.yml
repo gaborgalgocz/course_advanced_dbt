@@ -1,7 +1,9 @@
 sources:
   - name: ads_platform
     schema: bingeflix
+    description: This source contains tables related to Bigneflix ads platform.
     database: raw
     tables:
       - name: daily_ads
+        description: This table contains data on daily ad placement.
         identifier: ads
