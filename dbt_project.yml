@@ -44,4 +44,14 @@ seeds:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
+# -- Add this to the dbt_project.yml file seed configurations to create a separate schema for unit testing data (replace <project_name> and <folder_name> with appropriate values)
+  course_advanced_dbt: 
+    unit_testing:
+      +schema: unit_testing
+      +tags: unit_testing
+      # unit_test_input_dim_subscriptions:
+      #   +column_types: 
+      #     date_month: DATE
+      #     mrr_amount: FLOAT
+
 on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
