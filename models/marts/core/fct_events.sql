@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='incremental',
+        unique_key='event_id',
+    ) 
+}}
 
 SELECT
     session_id,
@@ -9,3 +14,6 @@ SELECT
 
 FROM {{ ref('stg_bingeflix__events') }}
 
+{% if is_incremental() %}
+WHERE created_at > (SELECT max(created_at) FROM {{ this }} ) - INTERVAL '3 days'
+{% endif %}

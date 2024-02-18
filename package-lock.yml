@@ -6,7 +6,11 @@ packages:
 - package: calogica/dbt_expectations
   version: 0.10.1
 - package: dbt-labs/dbt_project_evaluator
-  version: 0.8.1
+  version: 0.9.0
+- package: get-select/dbt_snowflake_monitoring
+  version: 5.0.3
 - package: calogica/dbt_date
   version: 0.10.0
-sha1_hash: 3bf05562e7dafe028e6f6d5f8c2fdf12f370aa35
+- package: get-select/dbt_snowflake_query_tags
+  version: 2.3.3
+sha1_hash: 6831a340f2076df9ee03d29428175f0d2e2ae7de
